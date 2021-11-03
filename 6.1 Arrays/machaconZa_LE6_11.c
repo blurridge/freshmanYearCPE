@@ -20,7 +20,7 @@ int main(){
             max = num[i];
             min = num[i];
         }
-        if(num[i] > max)
+        else if(num[i] > max)
             max = num[i];
         else if(num[i] < min)
             min = num[i];
