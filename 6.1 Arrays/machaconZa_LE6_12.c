@@ -25,5 +25,6 @@ int main(){
         }
     }
     printf("There are %d vowels and %d consonants.", vowCount, consoCount);
+    
     return 0;
 }
