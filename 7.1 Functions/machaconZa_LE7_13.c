@@ -32,8 +32,10 @@ int main(){
         }
         else if(choice == 2)
         {
-            printf("Enter the number you want to factorialize : ");
-            scanf("%d", &num);
+            do{
+                printf("Enter a positive integer to factorialize : ");
+                scanf("%d", &num);
+            }while(num < 0);
             answerFactorialSolver = factorialSolver(num);
             printf("The factorial of %d is %d\n", num, answerFactorialSolver);
         }
