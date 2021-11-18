@@ -16,6 +16,8 @@ int main(){
     int num, sum, onesDigit, tensDigit;
     printf("Enter a number\t: ");
     scanf("%d", &num);
+    if(num < 0)
+        num*=-1;
     onesDigit = extractLSD(num);
     tensDigit = extractSecondLSD(num);
     sum = sumDigits(onesDigit, tensDigit);

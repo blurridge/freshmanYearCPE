@@ -25,8 +25,10 @@ int main(){
         {
             printf("Enter your base number : ");
             scanf("%d", &base);
+            do{
             printf("Enter the power : ");
             scanf("%d", &power);
+            }while(power < 0);
             answerPowerSolver = powerSolver(base, power);
             printf("The answer of %d raised to the power of %d is %d\n", base, power, answerPowerSolver);
         }
@@ -76,6 +78,8 @@ int powerSolver(int base, int p){
     {
         answerPower*=base;
     }
+    /*Cannot calculate for negative powers due to function being forced to 
+    return an int instead of float*/
     return answerPower;
 }
 
