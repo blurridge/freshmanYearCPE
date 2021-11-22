@@ -8,12 +8,11 @@ CREATED ON      :22 November 2021
 
 #include <stdio.h>
 
-int indexSearch(int *numArr, int numOfEntries);
-int numSearched;
+int indexSearch(int *numArr, int numOfEntries, int numToSearch);
 
 int main(){
 
-    int numOfEntries, i, indexLoc;
+    int numOfEntries, i, indexLoc, numSearched;
     printf("Enter number of entries: ");
     scanf("%d", &numOfEntries);
     int numArray[numOfEntries];
@@ -24,7 +23,7 @@ int main(){
     }
     printf("Search data: ");
     scanf("%d", &numSearched);
-    indexLoc = indexSearch(numArray, numOfEntries);
+    indexLoc = indexSearch(numArray, numOfEntries, numSearched);
     if(indexLoc >= 0)
         printf("FOUND IN Index %d", indexLoc);
     else
@@ -32,11 +31,11 @@ int main(){
     return 0;
 }
 
-int indexSearch(int *numArr, int numOfEntries){
+int indexSearch(int *numArr, int numOfEntries, int numToSearch){
     int i, index, flag = 0;
     for(i = 0; i < numOfEntries; i++)
     {
-        if(*(numArr + i) == numSearched)
+        if(*(numArr + i) == numToSearch)
         {
             flag = 1;
             index = i;
