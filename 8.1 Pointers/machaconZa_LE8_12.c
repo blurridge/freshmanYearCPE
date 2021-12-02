@@ -32,16 +32,11 @@ int main(){
 }
 
 int indexSearch(int *numArr, int numOfEntries, int numToSearch){
-    int i, index, flag = 0;
-    for(i = 0; i < numOfEntries; i++)
-    {
+    int i = 0, index = -1;
+    do{
         if(*(numArr + i) == numToSearch)
-        {
-            flag = 1;
             index = i;
-        }
-        else if(flag == 0)
-            index = -1;
-    }
+        i++;
+    }while(i < numOfEntries && index < 0);
     return index;
 }
