@@ -25,9 +25,7 @@ int main(){
 }
 
 char *dayOfTheWeek(int dayNumber){
-    char days[7][10] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"};
-    char *dayName = (char *)malloc(sizeof(strlen(days[dayNumber-1])+1));
-    if(dayName != NULL)
-        strcpy(dayName, (dayNumber < 1 || dayNumber > 7) ? "INVALID" : days[dayNumber-1]);
+    char *days[7] = {"Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"}, *dayName;
+    dayName = (dayNumber < 1 || dayNumber > 7) ? "INVALID" : days[dayNumber-1];
     return dayName;
 }
